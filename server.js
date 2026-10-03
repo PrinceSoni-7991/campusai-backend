@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const privateKey = fs.readFileSync("./client_private_key.pem", "utf8");
+const privateKey = process.env.CLIENT_PRIVATE_KEY;
 
 app.get("/", (req, res) => {
     res.send("CampusAI backend is running!");
